@@ -24,7 +24,7 @@ tqdm = "^4.66.4"
 
 [tool.poetry.group.dev.dependencies]
 pytest=">=7.0.0"
-rpy2 = "3.5.15"
+rpy2 = "3.5.10"
 pytest-cov = "^4.1.0"
 pytest-xdist = ">=3.5.0"
 pyhdfe = ">=0.2.0"
