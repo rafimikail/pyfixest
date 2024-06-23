@@ -1469,8 +1469,6 @@ class Feols:
             self.get_inference(alpha=1 - alpha)
             _conf_int = self._conf_int
 
-        # import pdb; pdb.set_trace()
-
         _coefnames = self._coefnames
         _se = self._se
         _tstat = self._tstat

@@ -290,6 +290,7 @@ def coefplot(
 def _coefplot(plot_backend, *, figsize, **plot_kwargs):
     """Coefplot function that dispatches to the correct plotting backend."""
     figsize = set_figsize(figsize, plot_backend)
+    # import pdb; pdb.set_trace()
     if plot_backend == "lets_plot":
         return _coefplot_lets_plot(figsize=figsize, **plot_kwargs)
     elif plot_backend == "matplotlib":
@@ -344,7 +345,7 @@ def _coefplot_lets_plot(
         + geom_errorbar(
             aes(ymin="2.5%", ymax="97.5%"), width=0.05, position=position_dodge(0.5)
         )
-        + ylab("Estimate and 95% Confidence Interval")
+        + ylab(f"Estimate and {int((1-alpha)*100):d}% Confidence Interval")
     )
 
     if flip_coord:
@@ -425,8 +426,7 @@ def _coefplot_matplotlib(
         .add(so.Range(), so.Dodge(empty="drop"), xmin="2.5%", xmax="97.5%")
         .label(
             title=title,
-            x=rf"Estimate and {(1-alpha)*100:.2f}% Confidence Interval",
-            # df = pd.DataFrame({f"{alpha / 2}%": lb, f"{1-alpha / 2}%": ub})
+            x=rf"Estimate and {int((1-alpha)*100):d}% Confidence Interval",
             y="Coefficient",
             color="Model",
         )
