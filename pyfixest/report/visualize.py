@@ -290,7 +290,6 @@ def coefplot(
 def _coefplot(plot_backend, *, figsize, **plot_kwargs):
     """Coefplot function that dispatches to the correct plotting backend."""
     figsize = set_figsize(figsize, plot_backend)
-    # import pdb; pdb.set_trace()
     if plot_backend == "lets_plot":
         return _coefplot_lets_plot(figsize=figsize, **plot_kwargs)
     elif plot_backend == "matplotlib":
