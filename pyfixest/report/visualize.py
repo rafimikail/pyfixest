@@ -148,7 +148,7 @@ def iplot(
                 "In consequence, the '.iplot()' method is not supported."
             )
         all_icovars += fxst._icovars
-        df_model = fxst.tidy().reset_index()  # Coefficient -> simple column
+        df_model = fxst.tidy(alpha=alpha).reset_index()  # Coefficient -> simple column
         df_model["fml"] = fxst._fml
         df_model.set_index("fml", inplace=True)
         df_all.append(df_model)
@@ -262,7 +262,7 @@ def coefplot(
 
     df_all = []
     for fxst in models:
-        df_model = fxst.tidy().reset_index()
+        df_model = fxst.tidy(alpha=alpha).reset_index()
         df_model["fml"] = fxst._fml
         df_model.set_index("fml", inplace=True)
         df_all.append(df_model)

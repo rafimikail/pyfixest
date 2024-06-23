@@ -1450,7 +1450,7 @@ class Feols:
         self._adj_r2 = np.nan
         self._adj_r2_within = np.nan
 
-    def tidy(self) -> pd.DataFrame:
+    def tidy(self, alpha: float = 0.05) -> pd.DataFrame:
         """
         Tidy model outputs.
 
@@ -1463,12 +1463,17 @@ class Feols:
             A tidy pd.DataFrame containing the regression results, including point
             estimates, standard errors, t-statistics, and p-values.
         """
+        if alpha is None:
+            _conf_int = self._conf_int
+        else:
+            self.get_inference(alpha=1 - alpha)
+            _conf_int = self._conf_int
+
         _coefnames = self._coefnames
         _se = self._se
         _tstat = self._tstat
         _pvalue = self._pvalue
         _beta_hat = self._beta_hat
-        _conf_int = self._conf_int
 
         tidy_df = pd.DataFrame(
             {
