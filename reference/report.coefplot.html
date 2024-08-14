@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -128,6 +128,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Quickstart</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../compare-fixest-pyfixest.html"> 
+<span class="menu-text">Compare fixest &amp; pyfixest</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../difference-in-differences.html"> 
 <span class="menu-text">Difference-in-Differences Estimation</span></a>
   </li>  
@@ -137,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../stargazer.html"> 
-<span class="menu-text">Publication-Ready Regression Tables with <code>Stargazer</code></span></a>
+<span class="menu-text">Regression Tables with <code>pf.etable()</code> and <code>Stargazer</code></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../marginaleffects.html"> 
@@ -365,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><code>report.coefplot(models, alpha=0.05, figsize=None, yintercept=0, xintercept=None, rotate_xticks=0, title=None, coord_flip=True, keep=None, drop=None, exact_match=False, plot_backend='lets_plot')</code></p>
+<p><code>report.coefplot(models, alpha=0.05, figsize=None, yintercept=0, xintercept=None, rotate_xticks=0, title=None, coord_flip=True, keep=None, drop=None, exact_match=False, plot_backend='lets_plot', labels=None)</code></p>
 <p>Plot model coefficients with confidence intervals.</p>
 <section id="parameters" class="level2">
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
@@ -457,6 +461,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>The plotting backend to use between “lets_plot” (default) and “matplotlib”.</td>
 <td><code>'lets_plot'</code></td>
 </tr>
+<tr class="odd">
+<td><code>labels</code></td>
+<td>Optional[dict]</td>
+<td>A dictionary to relabel the variables. The keys are the original variable names and the values the new names. The renaming is applied after the selection of the coefficients via <code>keep</code> and <code>drop</code>.</td>
+<td><code>None</code></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -479,18 +489,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<div id="f44fae94" class="cell" data-execution_count="1">
+<div id="9a1b6b74" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyfixest <span class="im">as</span> pf</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pf.get_data()</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>fit1 <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1"</span>, data <span class="op">=</span> df)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fit2 <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1 + X2"</span>, data <span class="op">=</span> df)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fit3 <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1 + X2 | f1"</span>, data <span class="op">=</span> df)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>pf.coefplot([fit1, fit2, fit3])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.report.utils <span class="im">import</span> rename_categoricals</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pf.get_data()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fit1 <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1"</span>, data <span class="op">=</span> df)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fit2 <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1 + X2"</span>, data <span class="op">=</span> df)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>fit3 <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1 + X2 | f1"</span>, data <span class="op">=</span> df)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fit4 <span class="op">=</span> pf.feols(<span class="st">"Y ~ C(X1)"</span>, data <span class="op">=</span> df)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pf.coefplot([fit1, fit2, fit3])</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pf.coefplot([fit4], labels <span class="op">=</span> rename_categoricals(fit1._coefnames))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
-            <div id="mm3l4C"></div>
+            <div id="Qc5jpe"></div>
             <script type="text/javascript" data-lets-plot-script="library">
                 if(!window.letsPlotCallQueue) {
                     window.letsPlotCallQueue = [];
@@ -501,7 +514,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 (function() {
                     var script = document.createElement("script");
                     script.type = "text/javascript";
-                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.3.3/js-package/distr/lets-plot.min.js";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.4.0/js-package/distr/lets-plot.min.js";
                     script.onload = function() {
                         window.letsPlotCall = function(f) {f();};
                         window.letsPlotCallQueue.forEach(function(f) {f();});
@@ -514,9 +527,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                         var div = document.createElement("div");
                         div.style.color = 'darkred';
                         div.textContent = 'Error loading Lets-Plot JS';
-                        document.getElementById("mm3l4C").appendChild(div);
+                        document.getElementById("Qc5jpe").appendChild(div);
                     };
-                    var e = document.getElementById("mm3l4C");
+                    var e = document.getElementById("Qc5jpe");
                     e.appendChild(script);
                 })()
             </script>
@@ -524,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-display">
 
-            <div id="pYU60b"></div>
+            <div id="5Kqgrr"></div>
             <script type="text/javascript" data-lets-plot-script="library">
                 if(!window.letsPlotCallQueue) {
                     window.letsPlotCallQueue = [];
@@ -535,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 (function() {
                     var script = document.createElement("script");
                     script.type = "text/javascript";
-                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.3.3/js-package/distr/lets-plot.min.js";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.4.0/js-package/distr/lets-plot.min.js";
                     script.onload = function() {
                         window.letsPlotCall = function(f) {f();};
                         window.letsPlotCallQueue.forEach(function(f) {f();});
@@ -548,25 +561,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                         var div = document.createElement("div");
                         div.style.color = 'darkred';
                         div.textContent = 'Error loading Lets-Plot JS';
-                        document.getElementById("pYU60b").appendChild(div);
+                        document.getElementById("5Kqgrr").appendChild(div);
                     };
-                    var e = document.getElementById("pYU60b");
+                    var e = document.getElementById("5Kqgrr");
                     e.appendChild(script);
                 })()
             </script>
             
 </div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-   <div id="kICCV5"></div>
+   <div id="oa7jos"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        (function() {
            var plotSpec={
 "data":{
-"Coefficient":["Intercept","Intercept","X1","X1","X1","Intercept","Intercept","X1","X1","X1","X2","X2","X1","X1","X1","X2","X2"],
-"Model":["Y~X1","Y~X1+X2","Y~X1","Y~X1+X2","Y~X1+X2|f1","Y~X1","Y~X1+X2","Y~X1","Y~X1+X2","Y~X1+X2|f1","Y~X1+X2","Y~X1+X2|f1","Y~X1","Y~X1+X2","Y~X1+X2|f1","Y~X1+X2","Y~X1+X2|f1"],
-"Estimate":[0.9185177588356426,0.888779148933936,-1.000085840074156,-0.9929357698186859,-0.9495255714191589,0.9185177588356426,0.888779148933936,-1.000085840074156,-0.9929357698186859,-0.9495255714191589,-0.17634236659778288,-0.1742252748945438,-1.000085840074156,-0.9929357698186859,-0.9495255714191589,-0.17634236659778288,-0.1742252748945438],
-"2.5%":[0.9115040456858104,0.8819786125719951,-1.0054006579190942,-0.9980863909528378,-0.9537333136872869,0.9115040456858104,0.8819786125719951,-1.0054006579190942,-0.9980863909528378,-0.9537333136872869,-0.17770758530793163,-0.1753890918965572,-1.0054006579190942,-0.9980863909528378,-0.9537333136872869,-0.17770758530793163,-0.1753890918965572],
-"97.5%":[0.9255314719854747,0.8955796852958768,-0.9947710222292176,-0.987785148684534,-0.945317829151031,0.9255314719854747,0.8955796852958768,-0.9947710222292176,-0.987785148684534,-0.945317829151031,-0.17497714788763413,-0.17306145789253044,-0.9947710222292176,-0.987785148684534,-0.945317829151031,-0.17497714788763413,-0.17306145789253044]
+"Coefficient":["Intercept","C(X1)[T.1.0]","C(X1)[T.2.0]"],
+"Model":["Y~C(X1)","Y~C(X1)","Y~C(X1)"],
+"Estimate":[0.8537251189108644,-0.8214379253682664,-1.9919795072842579],
+"2.5%":[0.6106291116676353,-1.1546313748778112,-2.3247248623427095],
+"97.5%":[1.0968211261540937,-0.4882444758587216,-1.6592341522258065]
 },
 "mapping":{
 "x":"Coefficient",
@@ -574,6 +587,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 "color":"Model"
 },
 "data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"index"
+},{
+"type":"str",
+"column":"Coefficient"
+},{
+"type":"str",
+"column":"Model"
+},{
+"type":"float",
+"column":"Estimate"
+},{
+"type":"float",
+"column":"Std. Error"
+},{
+"type":"float",
+"column":"t value"
+},{
+"type":"float",
+"column":"Pr(>|t|)"
+},{
+"type":"float",
+"column":"2.5%"
+},{
+"type":"float",
+"column":"97.5%"
+}]
+},
+"guides":{
+"y":{
+"title":"Estimate and 95.0% Confidence Interval"
+}
 },
 "coord":{
 "name":"flip",
@@ -590,10 +636,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 },
 "kind":"plot",
-"scales":[{
-"name":"Estimate and 95.0% Confidence Interval",
-"aesthetic":"y"
-}],
+"scales":[],
 "layers":[{
 "geom":"point",
 "mapping":{
@@ -635,7 +678,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }],
 "metainfo_list":[]
 };
-           var plotContainer = document.getElementById("kICCV5");
+           var plotContainer = document.getElementById("oa7jos");
            window.letsPlotCall(function() {{
                LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
            }});

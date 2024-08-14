@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -125,6 +125,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Quickstart</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../compare-fixest-pyfixest.html"> 
+<span class="menu-text">Compare fixest &amp; pyfixest</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../difference-in-differences.html"> 
 <span class="menu-text">Difference-in-Differences Estimation</span></a>
   </li>  
@@ -134,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../stargazer.html"> 
-<span class="menu-text">Publication-Ready Regression Tables with <code>Stargazer</code></span></a>
+<span class="menu-text">Regression Tables with <code>pf.etable()</code> and <code>Stargazer</code></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../marginaleffects.html"> 
@@ -782,14 +786,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Fitted model t-statistics.</td>
 </tr>
 <tr class="odd">
+<td><a href="#pyfixest.estimation.Feols.update">update</a></td>
+<td>Update coefficients for new observations using Sherman-Morrison formula.</td>
+</tr>
+<tr class="even">
 <td><a href="#pyfixest.estimation.Feols.vcov">vcov</a></td>
 <td>Compute covariance matrices for an estimated regression model.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="#pyfixest.estimation.Feols.wald_test">wald_test</a></td>
 <td>Conduct Wald test.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="#pyfixest.estimation.Feols.wildboottest">wildboottest</a></td>
 <td>Run a wild cluster bootstrap based on an object of type “Feols”.</td>
 </tr>
@@ -1336,7 +1344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="pyfixest.estimation.Feols.predict" class="level3">
 <h3 class="anchored" data-anchor-id="pyfixest.estimation.Feols.predict">predict</h3>
-<p><code>estimation.Feols.predict(newdata=None, type='link', atol=1e-06, btol=1e-06)</code></p>
+<p><code>estimation.Feols.predict(newdata=None, atol=1e-06, btol=1e-06, type='link')</code></p>
 <p>Predict values of the model on new data.</p>
 <p>Return a flat np.array with predicted values of the regression model. If new fixed effect levels are introduced in <code>newdata</code>, predicted values for such observations will be set to NaN.</p>
 <section id="parameters-6" class="level4">
@@ -1344,8 +1352,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 5%">
-<col style="width: 13%">
-<col style="width: 75%">
+<col style="width: 12%">
+<col style="width: 76%">
 <col style="width: 5%">
 </colgroup>
 <thead>
@@ -1372,14 +1380,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td><code>atol</code></td>
 <td>Float</td>
-<td>Stopping tolerance for scipy.sparse.linalg.lsqr(). See https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.lsqr.html</td>
+<td>Stopping tolerance for scipy.sparse.linalg.lsqr(). See https://docs.scipy.org/doc/ scipy/reference/generated/scipy.sparse.linalg.lsqr.html</td>
 <td><code>1e-6</code></td>
 </tr>
 <tr class="even">
 <td><code>btol</code></td>
 <td>Float</td>
-<td>Another stopping tolerance for scipy.sparse.linalg.lsqr(). See https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.lsqr.html</td>
+<td>Another stopping tolerance for scipy.sparse.linalg.lsqr(). See https://docs.scipy.org/doc/ scipy/reference/generated/scipy.sparse.linalg.lsqr.html</td>
 <td><code>1e-6</code></td>
+</tr>
+<tr class="odd">
+<td><code>link</code></td>
+<td></td>
+<td>The type of prediction to be made. Can be either ‘link’ or ‘response’. Defaults to ‘link’. ‘link’ and ‘response’ lead to identical results for linear models.</td>
+<td><em>required</em></td>
 </tr>
 </tbody>
 </table>
@@ -1753,6 +1767,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </section>
 </section>
+<section id="pyfixest.estimation.Feols.update" class="level3">
+<h3 class="anchored" data-anchor-id="pyfixest.estimation.Feols.update">update</h3>
+<p><code>estimation.Feols.update(X_new, y_new, inplace=False)</code></p>
+<p>Update coefficients for new observations using Sherman-Morrison formula.</p>
+<section id="returns-18" class="level4">
+<h4 class="anchored" data-anchor-id="returns-18">Returns</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>np.ndarray</td>
+<td>Updated coefficients</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="pyfixest.estimation.Feols.vcov" class="level3">
 <h3 class="anchored" data-anchor-id="pyfixest.estimation.Feols.vcov">vcov</h3>
 <p><code>estimation.Feols.vcov(vcov, data=None)</code></p>
@@ -1790,8 +1826,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="returns-18" class="level4">
-<h4 class="anchored" data-anchor-id="returns-18">Returns</h4>
+<section id="returns-19" class="level4">
+<h4 class="anchored" data-anchor-id="returns-19">Returns</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 9%">
@@ -1858,8 +1894,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="returns-19" class="level4">
-<h4 class="anchored" data-anchor-id="returns-19">Returns</h4>
+<section id="returns-20" class="level4">
+<h4 class="anchored" data-anchor-id="returns-20">Returns</h4>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1996,8 +2032,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="returns-20" class="level4">
-<h4 class="anchored" data-anchor-id="returns-20">Returns</h4>
+<section id="returns-21" class="level4">
+<h4 class="anchored" data-anchor-id="returns-21">Returns</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 4%">
