@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -369,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><code>report.iplot(models, alpha=0.05, figsize=None, yintercept=None, xintercept=None, rotate_xticks=0, title=None, coord_flip=True, keep=None, drop=None, exact_match=False, plot_backend='lets_plot', labels=None, joint=None, seed=None)</code></p>
+<p><code>report.iplot(models, alpha=0.05, figsize=None, yintercept=None, xintercept=None, rotate_xticks=0, title=None, coord_flip=True, keep=None, drop=None, exact_match=False, plot_backend='lets_plot', labels=None, ax=None, joint=None, seed=None)</code></p>
 <p>Plot model coefficients for variables interacted via “i()” syntax, with confidence intervals.</p>
 <section id="parameters" class="level2">
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
@@ -501,7 +501,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<div id="b7518b79" class="cell" data-execution_count="1">
+<div id="7a4ed730" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyfixest <span class="im">as</span> pf</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.report.utils <span class="im">import</span> rename_categoricals</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -515,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pf.iplot([fit1], joint <span class="op">=</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
-            <div id="lE45Rp"></div>
+            <div id="uQtgqi"></div>
             <script type="text/javascript" data-lets-plot-script="library">
                 if(!window.letsPlotCallQueue) {
                     window.letsPlotCallQueue = [];
@@ -526,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 (function() {
                     var script = document.createElement("script");
                     script.type = "text/javascript";
-                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.4.0/js-package/distr/lets-plot.min.js";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.4.1/js-package/distr/lets-plot.min.js";
                     script.onload = function() {
                         window.letsPlotCall = function(f) {f();};
                         window.letsPlotCallQueue.forEach(function(f) {f();});
@@ -539,9 +539,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                         var div = document.createElement("div");
                         div.style.color = 'darkred';
                         div.textContent = 'Error loading Lets-Plot JS';
-                        document.getElementById("lE45Rp").appendChild(div);
+                        document.getElementById("uQtgqi").appendChild(div);
                     };
-                    var e = document.getElementById("lE45Rp");
+                    var e = document.getElementById("uQtgqi");
                     e.appendChild(script);
                 })()
             </script>
@@ -549,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-display">
 
-            <div id="c78CeH"></div>
+            <div id="DTofEt"></div>
             <script type="text/javascript" data-lets-plot-script="library">
                 if(!window.letsPlotCallQueue) {
                     window.letsPlotCallQueue = [];
@@ -560,7 +560,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 (function() {
                     var script = document.createElement("script");
                     script.type = "text/javascript";
-                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.4.0/js-package/distr/lets-plot.min.js";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.4.1/js-package/distr/lets-plot.min.js";
                     script.onload = function() {
                         window.letsPlotCall = function(f) {f();};
                         window.letsPlotCallQueue.forEach(function(f) {f();});
@@ -573,24 +573,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                         var div = document.createElement("div");
                         div.style.color = 'darkred';
                         div.textContent = 'Error loading Lets-Plot JS';
-                        document.getElementById("c78CeH").appendChild(div);
+                        document.getElementById("DTofEt").appendChild(div);
                     };
-                    var e = document.getElementById("c78CeH");
+                    var e = document.getElementById("DTofEt");
                     e.appendChild(script);
                 })()
             </script>
             
 </div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-   <div id="ruE9oU"></div>
+   <div id="h4wXnb"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        (function() {
            var plotSpec={
 "data":{
 "Coefficient":["C(f1)[T.1.0]","C(f1)[T.2.0]","C(f1)[T.3.0]","C(f1)[T.4.0]","C(f1)[T.5.0]","C(f1)[T.6.0]","C(f1)[T.7.0]","C(f1)[T.8.0]","C(f1)[T.9.0]","C(f1)[T.10.0]","C(f1)[T.11.0]","C(f1)[T.12.0]","C(f1)[T.13.0]","C(f1)[T.14.0]","C(f1)[T.15.0]","C(f1)[T.16.0]","C(f1)[T.17.0]","C(f1)[T.18.0]","C(f1)[T.19.0]","C(f1)[T.20.0]","C(f1)[T.21.0]","C(f1)[T.22.0]","C(f1)[T.23.0]","C(f1)[T.24.0]","C(f1)[T.25.0]","C(f1)[T.26.0]","C(f1)[T.27.0]","C(f1)[T.28.0]","C(f1)[T.29.0]","C(f1)[T.1.0]","C(f1)[T.2.0]","C(f1)[T.3.0]","C(f1)[T.4.0]","C(f1)[T.5.0]","C(f1)[T.6.0]","C(f1)[T.7.0]","C(f1)[T.8.0]","C(f1)[T.9.0]","C(f1)[T.10.0]","C(f1)[T.11.0]","C(f1)[T.12.0]","C(f1)[T.13.0]","C(f1)[T.14.0]","C(f1)[T.15.0]","C(f1)[T.16.0]","C(f1)[T.17.0]","C(f1)[T.18.0]","C(f1)[T.19.0]","C(f1)[T.20.0]","C(f1)[T.21.0]","C(f1)[T.22.0]","C(f1)[T.23.0]","C(f1)[T.24.0]","C(f1)[T.25.0]","C(f1)[T.26.0]","C(f1)[T.27.0]","C(f1)[T.28.0]","C(f1)[T.29.0]"],
 "Estimate":[2.5442879837380556,-1.6346807837677444,-0.4639805415936478,-1.762712219827264,1.4348086119364796,-0.8992225420858184,0.8901916963536634,-0.4708119794251317,0.08392895661938178,0.28878174380848387,1.2881639264088718,0.6873080715508432,1.8043009738995925,-0.21656684189387726,1.390369881952681,2.2404780654367857,-0.3263697830683054,1.6520823541202088,0.5883570616384417,2.7916074868998453,-1.4464082114876389,-1.0659170994410565,-0.5480905346838362,-0.9775601740834312,-1.7019175178822936,1.0750127541094727,-0.48200420903080204,1.5173786526283055,0.2115121440950535,2.5442879837380556,-1.6346807837677444,-0.4639805415936478,-1.762712219827264,1.4348086119364796,-0.8992225420858184,0.8901916963536634,-0.4708119794251317,0.08392895661938178,0.28878174380848387,1.2881639264088718,0.6873080715508432,1.8043009738995925,-0.21656684189387726,1.390369881952681,2.2404780654367857,-0.3263697830683054,1.6520823541202088,0.5883570616384417,2.7916074868998453,-1.4464082114876389,-1.0659170994410565,-0.5480905346838362,-0.9775601740834312,-1.7019175178822936,1.0750127541094727,-0.48200420903080204,1.5173786526283055,0.2115121440950535],
-"2.5%":[1.6988810797044176,-2.521351025022358,-1.3779393065398147,-2.6556933609461773,0.4770952921754974,-1.8291701365228206,-0.009423320741525743,-1.3574822206797457,-0.7967298916533313,-0.59788849744613,0.3885489093136826,-0.24263952288615886,0.8825710451114388,-1.1552192837893145,0.46042228751567904,1.353807824182172,-1.2742601424462936,0.7591012130012954,-0.34159053279856033,1.9622034224441056,-2.3393893526065526,-1.9301363487581435,-1.5394180012195637,-1.8771751911786203,-2.70609209657718,0.11729943434849044,-1.411951803467804,0.6675596211308419,-0.7363782152829348,1.2304224651731424,-3.01267456494429,-1.88438401940244,-3.150513909696367,-0.05359478470081647,-2.3444746125072236,-0.5079198465082155,-1.8488057606016777,-1.2847223861174275,-1.089212037368062,-0.1099476164530071,-0.7579439988705617,0.3718201589382535,-1.6753473077724719,-0.054882188468723836,0.86248428426024,-1.7995071002876701,0.26428066425110597,-0.8568950087829632,1.5026123343329012,-2.8342099013567417,-2.4090192987964043,-2.0887344183251995,-2.37567171694531,-3.262527381927317,-0.41339064252782354,-1.927256279452207,0.19665614944382592,-1.2616251731243113],
-"97.5%":[3.389694887771694,-0.7480105425131306,0.44997822335251897,-0.8697310787083506,2.3925219316974617,0.030725052351183613,1.7898067134488524,0.4158582618294822,0.964587804892095,1.1754519850630978,2.187778943504061,1.6172556659878452,2.7260309026877465,0.7220856000015599,2.320317476389683,3.1271483066913994,0.6215205763096827,2.545063495239122,1.5183046560754438,3.621011551355585,-0.5534270703687254,-0.20169785012396946,0.4432369318518914,-0.07794515698824211,-0.6977429391874075,2.032726073870455,0.4479433854062,2.3671976841257694,1.1594025034730417,3.8581535023029687,-0.2566870025911987,0.9564229362151444,-0.3749105299581612,2.923212008573776,0.5460295283355865,2.2883032392155425,0.9071818017514142,1.452580299356191,1.6667755249850298,2.6862754692707504,2.132560141972248,3.236781788860932,1.2422136239847172,2.835621952374086,3.6184718466133314,1.1467675341510593,3.0398840439893116,2.033609132059847,4.08060263946679,-0.05860652161853608,0.2771850999142913,0.9925533489575272,0.4205513687784477,-0.1413076538372704,2.563416150746769,0.9632478613906028,2.838101155812785,1.6846494613144185],
+"2.5%":[1.6988810797044176,-2.521351025022358,-1.3779393065398147,-2.6556933609461773,0.4770952921754974,-1.8291701365228206,-0.009423320741525743,-1.3574822206797457,-0.7967298916533313,-0.59788849744613,0.3885489093136826,-0.24263952288615886,0.8825710451114388,-1.1552192837893145,0.46042228751567904,1.353807824182172,-1.2742601424462936,0.7591012130012954,-0.34159053279856033,1.9622034224441056,-2.3393893526065526,-1.9301363487581435,-1.5394180012195637,-1.8771751911786203,-2.70609209657718,0.11729943434849044,-1.411951803467804,0.6675596211308419,-0.7363782152829348,1.2496773045085159,-2.9924799190792557,-1.86356785490907,-3.1301755278831527,-0.031782074142906014,-2.3232942892383126,-0.4874303726995559,-1.8286111147366433,-1.2646646546843618,-1.0690173915030277,-0.0894581426443477,-0.736763675601651,0.39281331809598274,-1.653968724424951,-0.03370186519981311,0.8826789301252744,-1.7779181157521875,0.28461904606431987,-0.8357146855140525,1.5215026958014486,-2.813871519543528,-2.3893359927851305,-2.066156117857324,-2.3551822431366505,-3.2396564778866903,-0.3915779319699131,-1.9060759561832963,0.21601147862029002,-1.2400361885888285],
+"97.5%":[3.389694887771694,-0.7480105425131306,0.44997822335251897,-0.8697310787083506,2.3925219316974617,0.030725052351183613,1.7898067134488524,0.4158582618294822,0.964587804892095,1.1754519850630978,2.187778943504061,1.6172556659878452,2.7260309026877465,0.7220856000015599,2.320317476389683,3.1271483066913994,0.6215205763096827,2.545063495239122,1.5183046560754438,3.621011551355585,-0.5534270703687254,-0.20169785012396946,0.4432369318518914,-0.07794515698824211,-0.6977429391874075,2.032726073870455,0.4479433854062,2.3671976841257694,1.1594025034730417,3.8388986629675954,-0.2768816484562331,0.9356067717217744,-0.3952489117713751,2.901399298015865,0.5248492050666758,2.2678137654068826,0.8869871558863798,1.4325225679231253,1.6465808791199954,2.665785995462091,2.1113798187033375,3.2157886297032023,1.2208350406371964,2.8144416291051755,3.598277200748297,1.1251785496155766,3.019545662176098,2.012428808790936,4.061712277998242,-0.07894490343174976,0.25750179390301753,0.9699750484896513,0.40006189496978806,-0.16417855787789692,2.5416034401888585,0.9420675381216921,2.818745826636321,1.6630604767789356],
 "Model":["Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0%","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs","Y~i(f1): 95.0% joint CIs"]
 },
 "mapping":{
@@ -682,7 +682,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }],
 "metainfo_list":[]
 };
-           var plotContainer = document.getElementById("ruE9oU");
+           var plotContainer = document.getElementById("h4wXnb");
            window.letsPlotCall(function() {{
                LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
            }});
