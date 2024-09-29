@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>report.summary</title>
+<title>did.visualize.panelview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,9 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -180,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/did.visualize.panelview.html">Summarize and Visualize</a></li><li class="breadcrumb-item"><a href="../reference/report.summary.html">report.summary</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/did.visualize.panelview.html">Summarize and Visualize</a></li><li class="breadcrumb-item"><a href="../reference/did.visualize.panelview.html">did.visualize.panelview</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -297,13 +294,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/did.visualize.panelview.html" class="sidebar-item-text sidebar-link">
+  <a href="../reference/did.visualize.panelview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">did.visualize.panelview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/report.summary.html" class="sidebar-item-text sidebar-link active">
+  <a href="../reference/report.summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">report.summary</span></a>
   </div>
 </li>
@@ -371,35 +368,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/did.visualize.panelview.html">Summarize and Visualize</a></li><li class="breadcrumb-item"><a href="../reference/report.summary.html">report.summary</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">report.summary</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p><code>report.summary(models, digits=3)</code></p>
-<p>Print a summary of estimation results for each estimated model.</p>
-<p>For each model, this method prints a header indicating the fixed-effects and the dependent variable, followed by a table of coefficient estimates with standard errors, t-values, and p-values.</p>
+<section id="pyfixest.did.visualize.panelview" class="level1">
+<h1>did.visualize.panelview</h1>
+<p><code>did.visualize.panelview(data, unit, time, treat, collapse_to_cohort=False, subsamp=None, sort_by_timing=False, xlab=None, ylab=None, noticks=False, title=None, legend=False, ax=None)</code></p>
+<p>Generate a panel view of the treatment variable over time for each unit.</p>
 <section id="parameters" class="level2">
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 34%">
-<col style="width: 51%">
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 62%">
 <col style="width: 7%">
 </colgroup>
 <thead>
@@ -412,16 +394,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>models</code></td>
-<td>list[Union[Feols, Fepois, Feiv]] or FixestMulti.</td>
-<td>The models to be summarized.</td>
+<td><code>data</code></td>
+<td>pandas.DataFrame</td>
+<td>The input dataframe containing the data.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>digits</code></td>
+<td><code>unit</code></td>
+<td>str</td>
+<td>The column name representing the unit identifier.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td><code>time</code></td>
+<td>str</td>
+<td>The column name representing the time identifier.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>treat</code></td>
+<td>str</td>
+<td>The column name representing the treatment variable.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td><code>collapse_to_cohort</code></td>
+<td>bool</td>
+<td>Whether to collapse units into treatment cohorts.</td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>subsamp</code></td>
 <td>int</td>
-<td>The number of decimal places to round the summary statistics to. Default is 3.</td>
-<td><code>3</code></td>
+<td>The number of samples to draw from data set for display (default is None).</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>sort_by_timing</code></td>
+<td>bool</td>
+<td>Whether to sort the treatment cohorts by the number of treated periods.</td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>xlab</code></td>
+<td>str</td>
+<td>The label for the x-axis. Default is None, in which case default labels are used.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>ylab</code></td>
+<td>str</td>
+<td>The label for the y-axis. Default is None, in which case default labels are used.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>noticks</code></td>
+<td>bool</td>
+<td>Whether to display ticks on the plot. Default is False.</td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>title</code></td>
+<td>str</td>
+<td>The title for the plot. Default is None, in which case no title is displayed.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>legend</code></td>
+<td>bool</td>
+<td>Whether to display a legend. Default is False (since binary treatments are self-explanatory).</td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>ax</code></td>
+<td>matplotlib.pyplot.Axes</td>
+<td>The axes on which to draw the plot. Default is None, in which case a new figure is created.</td>
+<td><code>None</code></td>
 </tr>
 </tbody>
 </table>
@@ -437,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>None</td>
+<td>matplotlib.pyplot.Axes</td>
 <td></td>
 </tr>
 </tbody>
@@ -445,128 +493,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<div id="4bf55b24" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyfixest <span class="im">as</span> pf</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pf.get_data()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fit1 <span class="op">=</span> pf.feols(<span class="st">"Y~X1 + X2 | f1"</span>, df)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fit2 <span class="op">=</span> pf.feols(<span class="st">"Y~X1 + X2 | f1 + f2"</span>, df)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>fit3 <span class="op">=</span> pf.feols(<span class="st">"Y~X1 + X2 | f1 + f2 + f3"</span>, df)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pf.summary([fit1, fit2, fit3])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-            <div id="lZLGKe"></div>
-            <script type="text/javascript" data-lets-plot-script="library">
-                if(!window.letsPlotCallQueue) {
-                    window.letsPlotCallQueue = [];
-                }; 
-                window.letsPlotCall = function(f) {
-                    window.letsPlotCallQueue.push(f);
-                };
-                (function() {
-                    var script = document.createElement("script");
-                    script.type = "text/javascript";
-                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.4.1/js-package/distr/lets-plot.min.js";
-                    script.onload = function() {
-                        window.letsPlotCall = function(f) {f();};
-                        window.letsPlotCallQueue.forEach(function(f) {f();});
-                        window.letsPlotCallQueue = [];
-                        
-                    };
-                    script.onerror = function(event) {
-                        window.letsPlotCall = function(f) {};    // noop
-                        window.letsPlotCallQueue = [];
-                        var div = document.createElement("div");
-                        div.style.color = 'darkred';
-                        div.textContent = 'Error loading Lets-Plot JS';
-                        document.getElementById("lZLGKe").appendChild(div);
-                    };
-                    var e = document.getElementById("lZLGKe");
-                    e.appendChild(script);
-                })()
-            </script>
-            
-</div>
-<div class="cell-output cell-output-display">
-
-            <div id="TgkeJF"></div>
-            <script type="text/javascript" data-lets-plot-script="library">
-                if(!window.letsPlotCallQueue) {
-                    window.letsPlotCallQueue = [];
-                }; 
-                window.letsPlotCall = function(f) {
-                    window.letsPlotCallQueue.push(f);
-                };
-                (function() {
-                    var script = document.createElement("script");
-                    script.type = "text/javascript";
-                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.4.1/js-package/distr/lets-plot.min.js";
-                    script.onload = function() {
-                        window.letsPlotCall = function(f) {f();};
-                        window.letsPlotCallQueue.forEach(function(f) {f();});
-                        window.letsPlotCallQueue = [];
-                        
-                    };
-                    script.onerror = function(event) {
-                        window.letsPlotCall = function(f) {};    // noop
-                        window.letsPlotCallQueue = [];
-                        var div = document.createElement("div");
-                        div.style.color = 'darkred';
-                        div.textContent = 'Error loading Lets-Plot JS';
-                        document.getElementById("TgkeJF").appendChild(div);
-                    };
-                    var e = document.getElementById("TgkeJF");
-                    e.appendChild(script);
-                })()
-            </script>
-            
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>###
-
-Estimation:  OLS
-Dep. var.: Y, Fixed effects: f1
-Inference:  CRV1
-Observations:  997
-
-| Coefficient   |   Estimate |   Std. Error |   t value |   Pr(&gt;|t|) |   2.5% |   97.5% |
-|:--------------|-----------:|-------------:|----------:|-----------:|-------:|--------:|
-| X1            |     -0.950 |        0.067 |   -14.273 |      0.000 | -1.086 |  -0.813 |
-| X2            |     -0.174 |        0.018 |    -9.469 |      0.000 | -0.212 |  -0.137 |
----
-RMSE: 1.648 R2: 0.489 R2 Within: 0.239 
-###
-
-Estimation:  OLS
-Dep. var.: Y, Fixed effects: f1+f2
-Inference:  CRV1
-Observations:  997
-
-| Coefficient   |   Estimate |   Std. Error |   t value |   Pr(&gt;|t|) |   2.5% |   97.5% |
-|:--------------|-----------:|-------------:|----------:|-----------:|-------:|--------:|
-| X1            |     -0.924 |        0.061 |   -15.165 |      0.000 | -1.049 |  -0.799 |
-| X2            |     -0.174 |        0.015 |   -11.918 |      0.000 | -0.204 |  -0.144 |
----
-RMSE: 1.346 R2: 0.659 R2 Within: 0.303 
-###
-
-Estimation:  OLS
-Dep. var.: Y, Fixed effects: f1+f2+f3
-Inference:  CRV1
-Observations:  997
-
-| Coefficient   |   Estimate |   Std. Error |   t value |   Pr(&gt;|t|) |   2.5% |   97.5% |
-|:--------------|-----------:|-------------:|----------:|-----------:|-------:|--------:|
-| X1            |     -0.957 |        0.039 |   -24.645 |      0.000 | -1.037 |  -0.878 |
-| X2            |     -0.194 |        0.009 |   -21.730 |      0.000 | -0.212 |  -0.176 |
----
-RMSE: 0.97 R2: 0.823 R2 Within: 0.481 </code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df_het <span class="op">=</span> pd.read_csv(<span class="st">"pd.read_csv("</span>pyfixest<span class="op">/</span>did<span class="op">/</span>data<span class="op">/</span>df_het.csv<span class="st">")</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="er">panelview</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> df_het,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    unit <span class="op">=</span> <span class="st">"unit"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> <span class="st">"year"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    treat <span class="op">=</span> <span class="st">"treat"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    subsamp <span class="op">=</span> <span class="dv">50</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"Treatment Assignment"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

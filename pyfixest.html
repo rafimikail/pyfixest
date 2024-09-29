@@ -125,37 +125,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Quickstart</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./compare-fixest-pyfixest.html"> 
-<span class="menu-text">Compare fixest &amp; pyfixest</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./difference-in-differences.html"> 
-<span class="menu-text">Difference-in-Differences Estimation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./replicating-the-effect.html"> 
-<span class="menu-text">Replicating ‘The Effect’ with PyFixest</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./stargazer.html"> 
-<span class="menu-text">Regression Tables with <code>pf.etable()</code> and <code>Stargazer</code></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./marginaleffects.html"> 
-<span class="menu-text">Hypothesis testing and Marginal Effects with <code>py-marginaleffects</code></span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./reference/index.html"> 
-<span class="menu-text">Documentation</span></a>
+<span class="menu-text">Function Reference</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./contributing.html"> 
 <span class="menu-text">Contributing</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./news.html"> 
-<span class="menu-text">Changelog</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learn-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learn more</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learn-more">    
+        <li>
+    <a class="dropdown-item" href="./compare-fixest-pyfixest.html">
+ <span class="dropdown-text">Compare fixest &amp; PyFixest</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./difference-in-differences.html">
+ <span class="dropdown-text">Difference-in-Differences Estimation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./replicating-the-effect.html">
+ <span class="dropdown-text">Replicating ‘The Effect’ with PyFixest</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./table-layout.html">
+ <span class="dropdown-text">Regression Tables and Summary Statistics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./marginaleffects.html">
+ <span class="dropdown-text">Hypothesis Testing and Marginal Effects</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -184,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="figures/pyfixest-logo.png" class="img-fluid"></p>
 <section id="pyfixest-fast-high-dimensional-fixed-effects-regression-in-python" class="level1">
 <h1>PyFixest: Fast High-Dimensional Fixed Effects Regression in Python</h1>
-<p><a href="https://opensource.org/license/mit"><img src="https://img.shields.io/badge/License-MIT-blue.svg" class="img-fluid" alt="License"></a> <a href="https://pypi.org/project/pyfixest/"><img src="https://img.shields.io/pypi/v/pyfixest.svg" class="img-fluid" alt="PyPI -Version"></a> <img src="https://img.shields.io/pypi/pyversions/pyfixest.svg" class="img-fluid" alt="PyPI - Python Version"> <a href="https://pepy.tech/project/pyfixest"><img src="https://static.pepy.tech/badge/pyfixest.png" class="img-fluid" alt="Downloads"></a> <a href="https://pepy.tech/project/pyfixest"><img src="https://static.pepy.tech/badge/pyfixest/month.png" class="img-fluid" alt="Downloads"></a> <a href="https://codecov.io/gh/py-econometrics/pyfixest"><img src="https://codecov.io/gh/py-econometrics/pyfixest/branch/master/graph/badge.svg" class="img-fluid" alt="image"></a> <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" class="img-fluid" alt="Ruff"></a> <a href="#contributors-"><img src="https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square" class="img-fluid" alt="All Contributors"></a></p>
+<p><a href="https://opensource.org/license/mit"><img src="https://img.shields.io/badge/License-MIT-blue.svg" class="img-fluid" alt="License"></a> <a href="https://pypi.org/project/pyfixest/"><img src="https://img.shields.io/pypi/v/pyfixest.svg" class="img-fluid" alt="PyPI -Version"></a> <img src="https://img.shields.io/pypi/pyversions/pyfixest.svg" class="img-fluid" alt="PyPI - Python Version"> <a href="https://pepy.tech/project/pyfixest"><img src="https://static.pepy.tech/badge/pyfixest.png" class="img-fluid" alt="Downloads"></a> <a href="https://pepy.tech/project/pyfixest"><img src="https://static.pepy.tech/badge/pyfixest/month.png" class="img-fluid" alt="Downloads"></a> <a href="https://codecov.io/gh/py-econometrics/pyfixest"><img src="https://codecov.io/gh/py-econometrics/pyfixest/branch/master/graph/badge.svg" class="img-fluid" alt="image"></a> <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" class="img-fluid" alt="Ruff"></a> <a href="https://pixi.sh"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json&amp;style=flat-square" class="img-fluid" alt="Pixi Badge"></a> <a href="#contributors-"><img src="https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square" class="img-fluid" alt="All Contributors"></a></p>
 <p><code>PyFixest</code> is a Python implementation of the formidable <a href="https://github.com/lrberge/fixest">fixest</a> package for fast high-dimensional fixed effects regression.</p>
 <p>The package aims to mimic <code>fixest</code> syntax and functionality as closely as Python allows: if you know <code>fixest</code> well, the goal is that you won’t have to read the docs to get started! In particular, this means that all of <code>fixest's</code> defaults are mirrored by <code>PyFixest</code> - currently with only <a href="https://github.com/py-econometrics/pyfixest/issues/260">one small exception</a>.</p>
 <p>Nevertheless, for a quick introduction, you can take a look at the <a href="https://py-econometrics.github.io/pyfixest/quickstart.html">quickstart</a> or the regression chapter of <a href="https://github.com/aeturrell">Arthur Turrell’s</a> book on <a href="https://aeturrell.github.io/coding-for-economists/econmt-regression.html#imports">Coding for Economists</a>.</p>
@@ -204,6 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><strong>Multiple Hypothesis Corrections</strong> following the Procedure by <a href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X20976314">Romano and Wolf</a> and <strong>Simultaneous Confidence Intervals</strong> using a <strong>Multiplier Bootstrap</strong></li>
 <li>The <strong>Causal Cluster Variance Estimator (CCV)</strong> following <a href="https://economics.mit.edu/sites/default/files/2022-09/When%20Should%20You%20Adjust%20Standard%20Errors%20for%20Clustering.pdf">Abadie et al.</a></li>
+<li><strong>Publication-ready tables</strong> with <a href="https://posit-dev.github.io/great-tables/articles/intro.html">Great Tables</a> or LaTex booktabs</li>
 </ul>
 </section>
 <section id="installation" class="level2">
