@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -35,10 +69,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-41ce87c438ccaeb35f64ae41c48547a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,6 +100,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -93,6 +130,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
 <span class="menu-text">Function Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../changelog.html"> 
+<span class="menu-text">Changelog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../contributing.html"> 
@@ -340,21 +381,41 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/estimation.demean.html">Misc / Utilities</a></li><li class="breadcrumb-item"><a href="../reference/estimation.model_matrix_fixest.html">estimation.model_matrix_fixest</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">estimation.model_matrix_fixest</h1>
+</div>
 
 
 
-<section id="pyfixest.estimation.model_matrix_fixest" class="level1">
-<h1>estimation.model_matrix_fixest</h1>
-<p><code>estimation.model_matrix_fixest(FixestFormula, data, drop_singletons=False, weights=None, drop_intercept=False)</code></p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>estimation.model_matrix_fixest(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    FixestFormula</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    data</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    drop_singletons<span class="op">=</span><span class="va">False</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    weights<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    drop_intercept<span class="op">=</span><span class="va">False</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Create model matrices for fixed effects estimation.</p>
 <p>This function processes the data and then calls <code>formulaic.Formula.get_model_matrix()</code> to create the model matrices.</p>
-<section id="parameters" class="level2">
-<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<section id="parameters" class="level2 doc-section doc-section-parameters">
+<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
 <col style="width: 20%">
-<col style="width: 68%">
+<col style="width: 69%">
 <col style="width: 4%">
 </colgroup>
 <thead>
@@ -367,37 +428,37 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>FixestFormula</code></td>
+<td>FixestFormula</td>
 <td>A pyfixest.estimation.FormulaParser.FixestFormula object</td>
 <td>that contains information on the model formula, the formula of the first and second stage, dependent variable, covariates, fixed effects, endogenous variables (if any), and instruments (if any).</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>data</code></td>
+<td>data</td>
 <td>pd.DataFrame</td>
 <td>The input DataFrame containing the data.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>drop_singletons</code></td>
+<td>drop_singletons</td>
 <td>bool</td>
 <td>Whether to drop singleton fixed effects. Default is False.</td>
 <td><code>False</code></td>
 </tr>
 <tr class="even">
-<td><code>weights</code></td>
+<td>weights</td>
 <td>str or None</td>
 <td>A string specifying the name of the weights column in <code>data</code>. Default is None.</td>
 <td><code>None</code></td>
 </tr>
 <tr class="odd">
-<td><code>data</code></td>
+<td>data</td>
 <td>pd.DataFrame</td>
 <td>The input DataFrame containing the data.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>drop_intercept</code></td>
+<td>drop_intercept</td>
 <td>bool</td>
 <td>Whether to drop the intercept from the model matrix. Default is False. If True, the intercept is dropped ex post from the model matrix created by formulaic.</td>
 <td><code>False</code></td>
@@ -405,29 +466,151 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="returns" class="level2">
-<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<section id="returns" class="level2 doc-section doc-section-returns">
+<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 0%">
-<col style="width: 99%">
+<col style="width: 0%">
+<col style="width: 98%">
 </colgroup>
 <thead>
 <tr class="header">
+<th>Name</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td></td>
 <td>dict</td>
 <td>A dictionary with the following keys and value types: - ‘Y’ : pd.DataFrame The dependent variable. - ‘X’ : pd.DataFrame The Design Matrix. - ‘fe’ : Optional[pd.DataFrame] The model’s fixed effects. None if not applicable. - ‘endogvar’ : Optional[pd.DataFrame] The model’s endogenous variable(s), None if not applicable. - ‘Z’ : np.ndarray The model’s set of instruments (exogenous covariates plus instruments). None if not applicable. - ‘weights_df’ : Optional[pd.DataFrame] DataFrame containing weights, None if weights are not used. - ‘na_index’ : np.ndarray Array indicating rows droppled beause of NA values or singleton fixed effects. - ‘na_index_str’ : str String representation of ‘na_index’. - ’_icovars’ : Optional[list[str]] List of variables interacted with i() syntax, None if not applicable. - ‘X_is_empty’ : bool Flag indicating whether X is empty.</td>
 </tr>
 </tbody>
 </table>
-
-
 </section>
+<section id="examples" class="level2 doc-section doc-section-examples">
+<h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
+<div id="2dacf3e6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyfixest <span class="im">as</span> pf</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.estimation.model_matrix_fixest_ <span class="im">import</span> model_matrix_fixest</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pf.get_data()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1 + f1 + f2"</span>, data<span class="op">=</span>data)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>FixestFormula <span class="op">=</span> fit.FixestFormula</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>mm <span class="op">=</span> model_matrix_fixest(FixestFormula, data)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>mm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+            <div id="UrzGE6"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.1/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("UrzGE6").appendChild(div);
+                    };
+                    var e = document.getElementById("UrzGE6");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+<div class="cell-output cell-output-display">
+
+            <div id="hLAYcS"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.1/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("hLAYcS").appendChild(div);
+                    };
+                    var e = document.getElementById("hLAYcS");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>{'Y':             Y
+ 3    3.319513
+ 4    0.134420
+ 5   -0.278350
+ 6   -1.519790
+ 7   -2.072451
+ ..        ...
+ 995 -2.876714
+ 996  1.430674
+ 997 -0.494217
+ 998 -1.047594
+ 999  0.105551
+ 
+ [997 rows x 1 columns],
+ 'X':      Intercept   X1    f1    f2
+ 3          1.0  1.0   1.0  10.0
+ 4          1.0  2.0  19.0  20.0
+ 5          1.0  2.0  13.0   3.0
+ 6          1.0  1.0   2.0  16.0
+ 7          1.0  0.0   2.0  23.0
+ ..         ...  ...   ...   ...
+ 995        1.0  2.0  14.0  23.0
+ 996        1.0  0.0  19.0  17.0
+ 997        1.0  1.0   3.0   5.0
+ 998        1.0  0.0  18.0  20.0
+ 999        1.0  2.0   4.0  19.0
+ 
+ [997 rows x 4 columns],
+ 'fe': None,
+ 'endogvar': None,
+ 'Z': None,
+ 'weights_df': None,
+ 'na_index': array([0, 1, 2]),
+ 'na_index_str': '0,1,2',
+ 'icovars': None,
+ 'X_is_empty': False}</code></pre>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -513,8 +696,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -625,7 +806,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

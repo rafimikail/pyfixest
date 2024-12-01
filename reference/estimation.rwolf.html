@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-41ce87c438ccaeb35f64ae41c48547a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,6 +100,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -127,6 +130,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
 <span class="menu-text">Function Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../changelog.html"> 
+<span class="menu-text">Changelog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../contributing.html"> 
@@ -374,21 +381,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/estimation.estimation.feols.html">Estimation Functions</a></li><li class="breadcrumb-item"><a href="../reference/estimation.rwolf.html">estimation.rwolf</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">estimation.rwolf</h1>
+</div>
 
 
 
-<section id="pyfixest.estimation.rwolf" class="level1">
-<h1>estimation.rwolf</h1>
-<p><code>estimation.rwolf(models, param, reps, seed, sampling_method='wild-bootstrap')</code></p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>estimation.rwolf(models, param, reps, seed, sampling_method<span class="op">=</span><span class="st">'wild-bootstrap'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Compute Romano-Wolf adjusted p-values for multiple hypothesis testing.</p>
 <p>For each model, it is assumed that tests to adjust are of the form “param = 0”. This function uses the <code>wildboottest()</code> method for running the bootstrap, hence models of type <code>Feiv</code> or <code>Fepois</code> are not supported.</p>
-<section id="parameters" class="level2">
-<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<section id="parameters" class="level2 doc-section doc-section-parameters">
+<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
+<col style="width: 8%">
 <col style="width: 14%">
-<col style="width: 66%">
+<col style="width: 67%">
 <col style="width: 9%">
 </colgroup>
 <thead>
@@ -401,31 +422,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>models</code></td>
+<td>models</td>
 <td>list[Feols] or FixestMulti</td>
 <td>A list of models for which the p-values should be computed, or a FixestMulti object. Models of type <code>Feiv</code> or <code>Fepois</code> are not supported.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>param</code></td>
+<td>param</td>
 <td>str</td>
 <td>The parameter for which the p-values should be computed.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>reps</code></td>
+<td>reps</td>
 <td>int</td>
 <td>The number of bootstrap replications.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>seed</code></td>
+<td>seed</td>
 <td>int</td>
 <td>The seed for the random number generator.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>sampling_method</code></td>
+<td>sampling_method</td>
 <td>str</td>
 <td>Sampling method for computing resampled statistics. Users can choose either bootstrap(‘wild-bootstrap’) or randomization inference(‘ri’)</td>
 <td><code>'wild-bootstrap'</code></td>
@@ -433,44 +454,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="returns" class="level2">
-<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<section id="returns" class="level2 doc-section doc-section-returns">
+<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 86%">
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 80%">
 </colgroup>
 <thead>
 <tr class="header">
+<th>Name</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td></td>
 <td>pd.DataFrame</td>
 <td>A DataFrame containing estimation statistics, including the Romano-Wolf adjusted p-values.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="examples" class="level2">
-<h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.estimation <span class="im">import</span> feols</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.utils <span class="im">import</span> get_data</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.multcomp <span class="im">import</span> rwolf</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> get_data().dropna()</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> feols(<span class="st">"Y ~ Y2 + X1 + X2"</span>, data<span class="op">=</span>data)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>rwolf(fit.to_list(), <span class="st">"X1"</span>, reps<span class="op">=</span><span class="dv">9999</span>, seed<span class="op">=</span><span class="dv">123</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>fit1 <span class="op">=</span> feols(<span class="st">"Y ~ X1"</span>, data<span class="op">=</span>data)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>fit2 <span class="op">=</span> feols(<span class="st">"Y ~ X1 + X2"</span>, data<span class="op">=</span>data)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>rwolf_df <span class="op">=</span> rwolf([fit1, fit2], <span class="st">"X1"</span>, reps<span class="op">=</span><span class="dv">9999</span>, seed<span class="op">=</span><span class="dv">123</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>rwolf_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="examples" class="level2 doc-section doc-section-examples">
+<h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
+<div id="23fd32e4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyfixest <span class="im">as</span> pf</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.utils <span class="im">import</span> get_data</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> get_data().dropna()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> pf.feols(<span class="st">"Y ~ Y2 + X1 + X2"</span>, data<span class="op">=</span>data)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>pf.rwolf(fit, <span class="st">"X1"</span>, reps<span class="op">=</span><span class="dv">9999</span>, seed<span class="op">=</span><span class="dv">123</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>fit1 <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1"</span>, data<span class="op">=</span>data)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>fit2 <span class="op">=</span> pf.feols(<span class="st">"Y ~ X1 + X2"</span>, data<span class="op">=</span>data)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>rwolf_df <span class="op">=</span> pf.rwolf([fit1, fit2], <span class="st">"X1"</span>, reps<span class="op">=</span><span class="dv">9999</span>, seed<span class="op">=</span><span class="dv">123</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># use randomization inference</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>rwolf_df <span class="op">=</span> pf.rwolf([fit1, fit2], <span class="st">"X1"</span>, reps<span class="op">=</span><span class="dv">9999</span>, seed<span class="op">=</span><span class="dv">123</span>, sampling_method <span class="op">=</span> <span class="st">"ri"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>rwolf_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+            <div id="Mmp74X"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.1/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("Mmp74X").appendChild(div);
+                    };
+                    var e = document.getElementById("Mmp74X");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+<div class="cell-output cell-output-display">
+
+            <div id="06GNMr"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.1/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("06GNMr").appendChild(div);
+                    };
+                    var e = document.getElementById("06GNMr");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
 
 
-</section>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">est0</th>
+<th data-quarto-table-cell-role="th">est1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Estimate</td>
+<td>-1.001930</td>
+<td>-0.995197</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Std. Error</td>
+<td>0.084823</td>
+<td>0.082194</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">t value</td>
+<td>-11.811964</td>
+<td>-12.107957</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Pr(&gt;|t|)</td>
+<td>0.000000</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2.5%</td>
+<td>-1.168383</td>
+<td>-1.156490</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">97.5%</td>
+<td>-0.835476</td>
+<td>-0.833904</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">RW Pr(&gt;|t|)</td>
+<td>0.000100</td>
+<td>0.000100</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -556,8 +705,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -668,7 +815,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

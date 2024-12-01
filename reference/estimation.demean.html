@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -35,10 +69,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-41ce87c438ccaeb35f64ae41c48547a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,6 +100,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -93,6 +130,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
 <span class="menu-text">Function Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../changelog.html"> 
+<span class="menu-text">Changelog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../contributing.html"> 
@@ -340,21 +381,35 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/estimation.demean.html">Misc / Utilities</a></li><li class="breadcrumb-item"><a href="../reference/estimation.demean.html">estimation.demean</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">estimation.demean</h1>
+</div>
 
 
 
-<section id="pyfixest.estimation.demean" class="level1">
-<h1>estimation.demean</h1>
-<p><code>estimation.demean(x, flist, weights, tol=1e-08, maxiter=100000)</code></p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>estimation.demean(x, flist, weights, tol<span class="op">=</span><span class="fl">1e-08</span>, maxiter<span class="op">=</span><span class="dv">100000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Demean an array.</p>
 <p>Workhorse for demeaning an input array <code>x</code> based on the specified fixed effects and weights via the alternating projections algorithm.</p>
-<section id="parameters" class="level2">
-<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<section id="parameters" class="level2 doc-section doc-section-parameters">
+<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
+<col style="width: 6%">
 <col style="width: 10%">
-<col style="width: 74%">
+<col style="width: 75%">
 <col style="width: 8%">
 </colgroup>
 <thead>
@@ -367,31 +422,31 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>x</code></td>
+<td>x</td>
 <td>numpy.ndarray</td>
 <td>Input array of shape (n_samples, n_features). Needs to be of type float.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>flist</code></td>
+<td>flist</td>
 <td>numpy.ndarray</td>
 <td>Array of shape (n_samples, n_factors) specifying the fixed effects. Needs to already be converted to integers.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>weights</code></td>
+<td>weights</td>
 <td>numpy.ndarray</td>
 <td>Array of shape (n_samples,) specifying the weights.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>tol</code></td>
+<td>tol</td>
 <td>float</td>
 <td>Tolerance criterion for convergence. Defaults to 1e-08.</td>
 <td><code>1e-08</code></td>
 </tr>
 <tr class="odd">
-<td><code>maxiter</code></td>
+<td>maxiter</td>
 <td>int</td>
 <td>Maximum number of iterations. Defaults to 100_000.</td>
 <td><code>100000</code></td>
@@ -399,29 +454,138 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="returns" class="level2">
-<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<section id="returns" class="level2 doc-section doc-section-returns">
+<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 82%">
+<col style="width: 4%">
+<col style="width: 16%">
+<col style="width: 79%">
 </colgroup>
 <thead>
 <tr class="header">
+<th>Name</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td></td>
 <td>tuple[numpy.ndarray, bool]</td>
 <td>A tuple containing the demeaned array of shape (n_samples, n_features) and a boolean indicating whether the algorithm converged successfully.</td>
 </tr>
 </tbody>
 </table>
-
-
 </section>
+<section id="examples" class="level2 doc-section doc-section-examples">
+<h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
+<div id="c4847cd4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyfixest <span class="im">as</span> pf</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.utils.dgps <span class="im">import</span> get_blw</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyfixest.estimation.demean_ <span class="im">import</span> demean</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> formulaic <span class="im">import</span> model_matrix</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>fml <span class="op">=</span> <span class="st">"y ~ treat | state + year"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> get_blw()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>data.head()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Y, rhs <span class="op">=</span> model_matrix(fml, data)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> rhs[<span class="dv">0</span>].drop(columns<span class="op">=</span><span class="st">"Intercept"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>fe <span class="op">=</span> rhs[<span class="dv">1</span>].drop(columns<span class="op">=</span><span class="st">"Intercept"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>YX <span class="op">=</span> np.concatenate([Y, X], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># to numpy</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> Y.to_numpy()</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> X.to_numpy()</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>YX <span class="op">=</span> np.concatenate([Y, X], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>fe <span class="op">=</span> fe.to_numpy().astype(<span class="bu">int</span>)  <span class="co"># demean requires fixed effects as ints!</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>YX_demeaned, success <span class="op">=</span> demean(YX, fe, weights <span class="op">=</span> np.ones(YX.shape[<span class="dv">0</span>]))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>Y_demeaned <span class="op">=</span> YX_demeaned[:, <span class="dv">0</span>]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>X_demeaned <span class="op">=</span> YX_demeaned[:, <span class="dv">1</span>:]</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.linalg.lstsq(X_demeaned, Y_demeaned, rcond<span class="op">=</span><span class="va">None</span>)[<span class="dv">0</span>])</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pf.feols(fml, data).coef())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+            <div id="yJxFf0"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.1/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("yJxFf0").appendChild(div);
+                    };
+                    var e = document.getElementById("yJxFf0");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+<div class="cell-output cell-output-display">
+
+            <div id="lMxMjK"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.1/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("lMxMjK").appendChild(div);
+                    };
+                    var e = document.getElementById("lMxMjK");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[-6.77307975]
+Coefficient
+treat   -6.77308
+Name: Estimate, dtype: float64</code></pre>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -507,8 +671,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -619,7 +781,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

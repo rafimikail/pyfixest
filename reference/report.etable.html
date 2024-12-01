@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -35,10 +69,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-41ce87c438ccaeb35f64ae41c48547a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,6 +100,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -93,6 +130,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
 <span class="menu-text">Function Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../changelog.html"> 
+<span class="menu-text">Changelog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../contributing.html"> 
@@ -340,21 +381,55 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/did.visualize.panelview.html">Summarize and Visualize</a></li><li class="breadcrumb-item"><a href="../reference/report.etable.html">report.etable</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">report.etable</h1>
+</div>
 
 
 
-<section id="pyfixest.report.etable" class="level1">
-<h1>report.etable</h1>
-<p><code>report.etable(models, type='gt', signif_code=[0.001, 0.01, 0.05], coef_fmt='b \n (se)', custom_stats=None, keep=None, drop=None, exact_match=False, labels=None, show_fe=True, show_se_type=True, felabels=None, notes='', model_heads=None, head_order='dh', custom_model_stats=None, filename=None, print_tex=False, **kwargs)</code></p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>report.etable(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    models</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="st">'gt'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    signif_code<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    coef_fmt<span class="op">=</span><span class="st">'b </span><span class="ch">\n</span><span class="st"> (se)'</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    custom_stats<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    keep<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    drop<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    exact_match<span class="op">=</span><span class="va">False</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    show_fe<span class="op">=</span><span class="va">True</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    show_se_type<span class="op">=</span><span class="va">True</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    felabels<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    notes<span class="op">=</span><span class="st">''</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    model_heads<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    head_order<span class="op">=</span><span class="st">'dh'</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    custom_model_stats<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    filename<span class="op">=</span><span class="va">None</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    print_tex<span class="op">=</span><span class="va">False</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Create an esttab-like table from a list of models.</p>
-<section id="parameters" class="level2">
-<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<section id="parameters" class="level2 doc-section doc-section-parameters">
+<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
 <col style="width: 5%">
-<col style="width: 83%">
-<col style="width: 4%">
+<col style="width: 12%">
+<col style="width: 79%">
+<col style="width: 2%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -366,127 +441,127 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>models</code></td>
-<td>list</td>
-<td>A list of models of type Feols, Feiv, Fepois.</td>
+<td>models</td>
+<td>A supported model object (Feols, Fepois, Feiv, FixestMulti) or a list of</td>
+<td>Feols, Fepois &amp; Feiv models.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>type</code></td>
+<td>type</td>
 <td>str</td>
 <td>Type of output. Either “df” for pandas DataFrame, “md” for markdown, “gt” for great_tables, or “tex” for LaTeX table. Default is “gt”.</td>
 <td><code>'gt'</code></td>
 </tr>
 <tr class="odd">
-<td><code>signif_code</code></td>
+<td>signif_code</td>
 <td>list</td>
-<td>Significance levels for the stars. Default is [0.001, 0.01, 0.05]. If None, no stars are printed.</td>
-<td><code>[0.001, 0.01, 0.05]</code></td>
+<td>Significance levels for the stars. Default is None, which sets [0.001, 0.01, 0.05]. If None, no stars are printed.</td>
+<td><code>None</code></td>
 </tr>
 <tr class="even">
-<td><code>coef_fmt</code></td>
+<td>coef_fmt</td>
 <td>str</td>
 <td>The format of the coefficient (b), standard error (se), t-stats (t), and p-value (p). Default is <code>"b \n (se)"</code>. Spaces <code></code>, parentheses <code>()</code>, brackets <code>[]</code>, newlines <code>\n</code> are supported.</td>
 <td><code>'b \n (se)'</code></td>
 </tr>
 <tr class="odd">
-<td><code>custom_stats</code></td>
+<td>custom_stats</td>
 <td>Optional[dict]</td>
 <td>A dictionary of custom statistics. “b”, “se”, “t”, or “p” are reserved.</td>
 <td><code>None</code></td>
 </tr>
 <tr class="even">
-<td><code>keep</code></td>
+<td>keep</td>
 <td>Optional[Union[list, str]]</td>
 <td>The pattern for retaining coefficient names. You can pass a string (one pattern) or a list (multiple patterns). Default is keeping all coefficients. You should use regular expressions to select coefficients. “age”, # would keep all coefficients containing age r”^tr”, # would keep all coefficients starting with tr r”\d$“, # would keep all coefficients ending with number Output will be in the order of the patterns.</td>
 <td><code>None</code></td>
 </tr>
 <tr class="odd">
-<td><code>drop</code></td>
+<td>drop</td>
 <td>Optional[Union[list, str]]</td>
 <td>The pattern for excluding coefficient names. You can pass a string (one pattern) or a list (multiple patterns). Syntax is the same as for <code>keep</code>. Default is keeping all coefficients. Parameter <code>keep</code> and <code>drop</code> can be used simultaneously.</td>
 <td><code>None</code></td>
 </tr>
 <tr class="even">
-<td><code>exact_match</code></td>
+<td>exact_match</td>
 <td>Optional[bool]</td>
 <td>Whether to use exact match for <code>keep</code> and <code>drop</code>. Default is False. If True, the pattern will be matched exactly to the coefficient name instead of using regular expressions.</td>
 <td><code>False</code></td>
 </tr>
 <tr class="odd">
-<td><code>labels</code></td>
+<td>labels</td>
 <td>Optional[dict]</td>
 <td>A dictionary to relabel the variables. The keys are the original variable names and the values the new names. Note that interaction terms will also be relabeled using the labels of the individual variables. The command is applied after the <code>keep</code> and <code>drop</code> commands.</td>
 <td><code>None</code></td>
 </tr>
 <tr class="even">
-<td><code>show_fe</code></td>
+<td>show_fe</td>
 <td>Optional[bool]</td>
 <td>Whether to show the rows with fixed effects markers. Default is True.</td>
 <td><code>True</code></td>
 </tr>
 <tr class="odd">
-<td><code>show_se_type</code></td>
+<td>show_se_type</td>
 <td>Optional[bool]</td>
 <td>Whether to show the rows with standard error type. Default is True.</td>
 <td><code>True</code></td>
 </tr>
 <tr class="even">
-<td><code>felabels</code></td>
+<td>felabels</td>
 <td>Optional[dict]</td>
 <td>A dictionary to relabel the fixed effects. Only needed if you want to relabel the FE lines with a different label than the one specied for the respective variable in the labels dictionary. The command is applied after the <code>keep</code> and <code>drop</code> commands.</td>
 <td><code>None</code></td>
 </tr>
 <tr class="odd">
-<td><code>digits</code></td>
+<td>digits</td>
 <td></td>
 <td>The number of digits to round to.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>thousands_sep</code></td>
+<td>thousands_sep</td>
 <td></td>
 <td>The thousands separator. Default is False.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>scientific_notation</code></td>
+<td>scientific_notation</td>
 <td></td>
 <td>Whether to use scientific notation. Default is True.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>scientific_notation_threshold</code></td>
+<td>scientific_notation_threshold</td>
 <td></td>
 <td>The threshold for using scientific notation. Default is 10_000.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>notes</code></td>
+<td>notes</td>
 <td>str</td>
 <td>Custom table notes. Default shows the significance levels and the format of the coefficient cell.</td>
 <td><code>''</code></td>
 </tr>
 <tr class="even">
-<td><code>model_heads</code></td>
+<td>model_heads</td>
 <td>Optional[list]</td>
 <td>Add custom headlines to models when output as df or latex. Length of list must correspond to number of models. Default is None.</td>
 <td><code>None</code></td>
 </tr>
 <tr class="odd">
-<td><code>head_order</code></td>
+<td>head_order</td>
 <td>Optional[str]</td>
 <td>String to determine the display of the table header when output as df or latex. Allowed values are “dh”, “hd”, “d”, “h”, or ““. When head_order is”dh”, the dependent variable is displayed first, followed by the custom model_heads (provided the user has specified them). With “hd” it is the other way around. When head_order is “d”, only the dependent variable and model numbers are displayed and with “” only the model numbers. Default is “dh”.</td>
 <td><code>'dh'</code></td>
 </tr>
 <tr class="even">
-<td><code>filename</code></td>
+<td>filename</td>
 <td>Optional[str]</td>
 <td>The filename to save the LaTeX table to. If None, the LaTeX code is returned as a string. Default is None.</td>
 <td><code>None</code></td>
 </tr>
 <tr class="odd">
-<td><code>print_tex</code></td>
+<td>print_tex</td>
 <td>Optional[bool]</td>
 <td>Whether to print the LaTeX code to the console. Default is False.</td>
 <td><code>False</code></td>
@@ -494,29 +569,240 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="returns" class="level2">
-<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<section id="returns" class="level2 doc-section doc-section-returns">
+<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 84%">
 </colgroup>
 <thead>
 <tr class="header">
+<th>Name</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td></td>
 <td>pandas.DataFrame</td>
 <td>A styled DataFrame with the coefficients and standard errors of the models. When output is “tex”, the LaTeX code is returned as a string.</td>
 </tr>
 </tbody>
 </table>
-
-
 </section>
+<section id="examples" class="level2 doc-section doc-section-examples">
+<h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
+<p>For more examples, take a look at the <a href="https://py-econometrics.github.io/pyfixest/table-layout.html">regression tables and summary statistics vignette</a>.</p>
+<div id="e8d133a4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyfixest <span class="im">as</span> pf</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pf.get_data()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>fit1 <span class="op">=</span> pf.feols(<span class="st">"Y~X1 + X2 | f1"</span>, df)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>fit2 <span class="op">=</span> pf.feols(<span class="st">"Y~X1 + X2 | f1 + f2"</span>, df)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>pf.etable([fit1, fit2])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+            <div id="Tmc34W"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.1/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("Tmc34W").appendChild(div);
+                    };
+                    var e = document.getElementById("Tmc34W");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+<div class="cell-output cell-output-display">
+
+            <div id="WAPbOm"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.1/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("WAPbOm").appendChild(div);
+                    };
+                    var e = document.getElementById("WAPbOm");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div id="ffwhqbtcrn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>
+#ffwhqbtcrn table {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+#ffwhqbtcrn thead, tbody, tfoot, tr, td, th { border-style: none; }
+ tr { background-color: transparent; }
+#ffwhqbtcrn p { margin: 0; padding: 0; }
+ #ffwhqbtcrn .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: hidden; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #ffwhqbtcrn .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #ffwhqbtcrn .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #ffwhqbtcrn .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #ffwhqbtcrn .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #ffwhqbtcrn .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #ffwhqbtcrn .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: black; border-bottom-style: solid; border-bottom-width: 0.5px; border-bottom-color: black; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #ffwhqbtcrn .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 0px; border-left-color: white; border-right-style: none; border-right-width: 0px; border-right-color: white; vertical-align: bottom; padding-top: 4px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #ffwhqbtcrn .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #ffwhqbtcrn .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #ffwhqbtcrn .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #ffwhqbtcrn .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 0.5px; border-bottom-color: black; vertical-align: bottom; padding-top: 4px; padding-bottom: 4px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #ffwhqbtcrn .gt_spanner_row { border-bottom-style: hidden; }
+ #ffwhqbtcrn .gt_group_heading { padding-top: 0px; padding-bottom: 0px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 0px; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 0.5px; border-top-color: black; border-bottom-style: solid; border-bottom-width: 0.5px; border-bottom-color: black; border-left-style: none; border-left-width: 1px; border-left-color: white; border-right-style: none; border-right-width: 1px; border-right-color: white; vertical-align: middle; text-align: left; }
+ #ffwhqbtcrn .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 0px; font-weight: initial; border-top-style: solid; border-top-width: 0.5px; border-top-color: black; border-bottom-style: solid; border-bottom-width: 0.5px; border-bottom-color: black; vertical-align: middle; }
+ #ffwhqbtcrn .gt_from_md> :first-child { margin-top: 0; }
+ #ffwhqbtcrn .gt_from_md> :last-child { margin-bottom: 0; }
+ #ffwhqbtcrn .gt_row { padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: none; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 0px; border-left-color: white; border-right-style: none; border-right-width: 0px; border-right-color: white; vertical-align: middle; overflow-x: hidden; }
+ #ffwhqbtcrn .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: hidden; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #ffwhqbtcrn .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #ffwhqbtcrn .gt_row_group_first td { border-top-width: 0.5px; }
+ #ffwhqbtcrn .gt_row_group_first th { border-top-width: 0.5px; }
+ #ffwhqbtcrn .gt_striped { background-color: rgba(128,128,128,0.05); }
+ #ffwhqbtcrn .gt_table_body { border-top-style: solid; border-top-width: 0.5px; border-top-color: black; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: black; }
+ #ffwhqbtcrn .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #ffwhqbtcrn .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #ffwhqbtcrn .gt_left { text-align: left; }
+ #ffwhqbtcrn .gt_center { text-align: center; }
+ #ffwhqbtcrn .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #ffwhqbtcrn .gt_font_normal { font-weight: normal; }
+ #ffwhqbtcrn .gt_font_bold { font-weight: bold; }
+ #ffwhqbtcrn .gt_font_italic { font-style: italic; }
+ #ffwhqbtcrn .gt_super { font-size: 65%; }
+ #ffwhqbtcrn .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #ffwhqbtcrn .gt_asterisk { font-size: 100%; vertical-align: 0; }
+ 
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th colspan="2" id="Y" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner">Y</span></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="(1)" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">(1)</th>
+<th id="(2)" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">(2)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<td colspan="3" class="gt_group_heading" data-quarto-table-cell-role="th">coef</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th">X1</td>
+<td class="gt_row gt_center">-0.950***<br>
+(0.067)</td>
+<td class="gt_row gt_center">-0.924***<br>
+(0.061)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th">X2</td>
+<td class="gt_row gt_center">-0.174***<br>
+(0.018)</td>
+<td class="gt_row gt_center">-0.174***<br>
+(0.015)</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<td colspan="3" class="gt_group_heading" data-quarto-table-cell-role="th">fe</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th">f1</td>
+<td class="gt_row gt_center">x</td>
+<td class="gt_row gt_center">x</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th">f2</td>
+<td class="gt_row gt_center">-</td>
+<td class="gt_row gt_center">x</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="3" class="gt_group_heading" data-quarto-table-cell-role="th">stats</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th">Observations</td>
+<td class="gt_row gt_center">997</td>
+<td class="gt_row gt_center">997</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th">S.E. type</td>
+<td class="gt_row gt_center">by: f1</td>
+<td class="gt_row gt_center">by: f1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th">R<sup>2</sup></td>
+<td class="gt_row gt_center">0.489</td>
+<td class="gt_row gt_center">0.659</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="3" class="gt_sourcenote">Significance levels: * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001. Format of coefficient cell: Coefficient (Std. Error)</td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+        
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -602,8 +888,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -714,7 +998,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
