@@ -234,7 +234,7 @@ def _plot_panelview_output_plot(
     figsize: Optional[tuple] = (11, 3),
 ) -> plt.Axes:
     if not ax:
-        f, ax = plt.subplots(figsize=figsize, dpi=300)
+        f, ax = plt.subplots(figsize=figsize)
     for unit_id in data_pivot.index:
         unit_data = data_pivot.loc[unit_id]
         treatment_times = data[(data[unit] == unit_id) & (data[treat])][time]
